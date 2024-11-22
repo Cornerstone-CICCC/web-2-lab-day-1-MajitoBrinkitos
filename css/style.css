@@ -40,20 +40,39 @@ body {
 .container .display-weather {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 .container .display-weather .city-title {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: url("../images/day.jpg");
-  background-position: center;
+  flex-wrap: wrap;
+  align-content: center;
   background-repeat: no-repeat;
-  height: 50px;
+  background-position: center;
+  height: 200px;
+}
+.container .display-weather .city-title h2 {
+  color: black;
+  font-size: 3rem;
 }
 .container .display-weather .forecast-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 10px;
+  justify-items: center;
+  align-items: center;
+  border: solid black 2px;
+}
+.container .display-weather .forecast-info h3 {
+  color: black;
+}
+.container .display-weather .forecast-info ul {
+  list-style: none;
+}
+.container .display-weather .forecast-info ul span {
+  font-weight: bold;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -2,7 +2,6 @@
 const btnSearch = document.querySelector('.btn-get-city');
 const displayWeather = document.querySelector('.display-weather');
 const search = document.querySelector('.search')
-const cityTitle = document.querySelector('.city-title')
 const forecastInfo = document.querySelector('.forecast-info')
 
 //const city
@@ -47,17 +46,18 @@ btnSearch.addEventListener('click', async () => {
             const minTemp = weatherData.daily.temperature_2m_min[1]
 
             let buildHtml = `
-            <div class=".city-title">
+            <div class="city-title">
                 <h2> <span>${city}</span> </h2>
                 <h2> <span>${temperature} °C</span> </h2>
             </div>
 
-            <div class=".forecast-info">
-                <h3> Country: <span>${country}</span> </h3>
-                <h3> Timezone: <span>${timezone}</span> </h3>
-                <h3> Population: <span>${population}</span> </h3>
-                <h3> Tomorrow's Forecast: ${tomorrowDate}</h3>
+            <div class="forecast-info">
+                <h3> Country: </h3> <span>${country}</span>
+                <h3> Timezone:  </h3> <span>${timezone}</span>
+                <h3> Population: </h3> <span>${population}</span>
+                <h3> Tomorrow's Forecast: </h3> 
                     <ul>
+                    <span>${tomorrowDate}</span>
                     <li>Low: ${minTemp} °C</li>
                     <li>Max: ${maxTemp} °C</li>
                     </ul>
@@ -65,6 +65,9 @@ btnSearch.addEventListener('click', async () => {
             `
         
             displayWeather.innerHTML = buildHtml
+            //Background image in the .city-title div
+            const cityTitle = document.querySelector('.city-title')
+            cityTitle.style.backgroundImage = "url('../images/day.jpg')"
         }  else {
             displayWeather.innerHTML = "Weather Data Not Available"
         } 

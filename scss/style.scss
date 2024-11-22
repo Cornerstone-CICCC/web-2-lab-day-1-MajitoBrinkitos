@@ -41,21 +41,43 @@ body {
     .display-weather {
         display: flex;
         flex-direction: column;
+        width: 100%;
 
         .city-title {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            background: url('../images/day.jpg');
-            background-position: center;
+            flex-wrap: wrap;
+            align-content: center;
             background-repeat: no-repeat;
-            height: 50px;
+            background-position: center;
+            height: 200px;
+
+            h2 {
+            color: black;
+            font-size: 3rem;
+            }
         }
 
         .forecast-info {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            gap: 10px;
+            justify-items: center;
+            align-items: center;
+            border: solid black 2px;
+
+            h3 {
+                color: black;
+            }
+
+            ul {
+                list-style: none;
+                span{
+                    font-weight: bold;
+                }
+            }
         }
     }
 }
