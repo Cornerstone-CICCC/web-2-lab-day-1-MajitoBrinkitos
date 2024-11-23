@@ -50,10 +50,11 @@ body {
   align-content: center;
   background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
   height: 200px;
+  text-align: center;
 }
 .container .display-weather .city-title h2 {
-  color: black;
   font-size: 3rem;
 }
 .container .display-weather .forecast-info {
@@ -63,7 +64,6 @@ body {
   gap: 10px;
   justify-items: center;
   align-items: center;
-  border: solid black 2px;
 }
 .container .display-weather .forecast-info h3 {
   color: black;
@@ -73,6 +73,16 @@ body {
 }
 .container .display-weather .forecast-info ul span {
   font-weight: bold;
+}
+
+.day-mode {
+  background: url("../images/day.jpg");
+  color: black;
+}
+
+.night-mode {
+  background: url("../images/night.jpg");
+  color: white;
 }
 
 /*# sourceMappingURL=style.css.map */

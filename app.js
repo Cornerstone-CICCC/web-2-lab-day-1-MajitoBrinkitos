@@ -39,6 +39,7 @@ btnSearch.addEventListener('click', async () => {
             const temperature = weatherData.current ? weatherData.current.temperature_2m : "N/A"
             const timezone = weatherCity.timezone || "Unavailable"
             const population = weatherCity.population || "Unavailable"
+            const isDay = weatherData.current ? weatherData.current.is_day : 0; //0 for night, unavailability
 
             //Tomorrow's Forecast
             const tomorrowDate = weatherData.daily.time[1]
@@ -62,12 +63,23 @@ btnSearch.addEventListener('click', async () => {
                     <li>Max: ${maxTemp} °C</li>
                     </ul>
             </div>
-            `
+            `;
         
             displayWeather.innerHTML = buildHtml
             //Background image in the .city-title div
             const cityTitle = document.querySelector('.city-title')
-            cityTitle.style.backgroundImage = "url('../images/day.jpg')"
+
+            //day and night change
+            if(isDay) {
+                cityTitle.classList.add('day-mode')
+                cityTitle.classList.remove('night-mode')
+            } else {
+                cityTitle.classList.add('night-mode')
+                cityTitle.classList.remove('day-mode')
+            }
+
+            //For image background, no effect
+            //cityTitle.style.backgroundImage = "url('../images/day.jpg')"
         }  else {
             displayWeather.innerHTML = "Weather Data Not Available"
         } 

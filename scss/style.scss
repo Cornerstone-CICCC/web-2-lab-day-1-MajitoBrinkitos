@@ -25,6 +25,7 @@ body {
         flex-direction: row;
         align-content: space-around;
         margin: 15px;
+
         .city {
             width: 80%;
             margin: 15px;
@@ -51,10 +52,11 @@ body {
             align-content: center;
             background-repeat: no-repeat;
             background-position: center;
+            background-size: cover;
             height: 200px;
+            text-align: center;
 
             h2 {
-            color: black;
             font-size: 3rem;
             }
         }
@@ -66,7 +68,6 @@ body {
             gap: 10px;
             justify-items: center;
             align-items: center;
-            border: solid black 2px;
 
             h3 {
                 color: black;
@@ -79,6 +80,19 @@ body {
                 }
             }
         }
+
     }
 }
+
+        //Day mode
+        .day-mode {
+            background: url('../images/day.jpg');
+            color: black;
+        }
+
+        //Night mode
+        .night-mode {
+            background: url('../images/night.jpg');
+            color: white;
+        }
 
